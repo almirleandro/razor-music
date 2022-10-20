@@ -1,0 +1,55 @@
+﻿@page "/"
+@model RazorMusic.Pages.Albums.IndexModel
+
+@{
+    ViewData["Title"] = "Albums";
+}
+
+<div class="main-container">
+    <div class="filters">
+        <form class="filters-form">
+            <div class="search-title">
+                <label for="SearchString">Search by title:</label>
+                <input type="text" asp-for="SearchString" />
+            </div>
+            <div class="search-genre">
+                <label for="AlbumGenre">Search by genre:</label>
+                <select asp-for="AlbumGenre" asp-items="Model.Genres">
+                    <option value="">All</option>
+                </select>
+            </div>
+            <input type="submit" value="Filter" class="filter-submit" />
+        </form>
+    </div>
+
+    <div class="gallery">
+        @foreach (var item in Model.Album) {
+            <a class="card-link" asp-page="./Details" asp-route-id="@item.ID">
+                <figure class="card">
+                    <div class="image-container">
+                        <img src="@item.ImageUrl" alt="@item.Title album cover">
+                    </div>
+                    <p class="card-title">Title: @item.Title</p>
+                    <p class="card-description">Artist: @item.Artist</p>
+                    <p class="card-description">Release year: @item.ReleaseYear</p>
+                    <p class="card-description">Genre: @item.Genre</p>
+                    <p class="card-description">Ranking:
+                        @for (var i = 0; i < item.Ranking; i++)
+                        {
+                            <span class="rating-star">&#11088;</span>
+                        }
+                    </p>
+                </figure>
+            </a>
+        }
+    </div>
+</div>
+
+
+@*
+    @page makes the file an MVC action.
+
+    @model makes all the logic from the view model avaliable to the page.
+
+    ViewData comes from the PageModel and it is read on the _Layout.cshtml file.
+*@

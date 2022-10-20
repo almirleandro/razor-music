@@ -1,0 +1,221 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+a:hover {
+    color: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #7952b3;
+    padding: 0 50px;
+}
+
+nav {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    color: white;
+}
+
+main {
+    flex-grow: 1;
+    padding: 0 50px;
+}
+
+.main-container {
+    max-width: 855px;
+    margin: 0 auto;
+}
+
+.filters {
+    margin: 50px 0 25px;
+}
+
+.filters-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-genre {
+    margin-left: 20px;
+}
+
+.search-genre select {
+    height: 30px;
+    min-width: 100px;
+}
+
+.filter-submit {
+    margin-left: 30px;
+    width: 90px;
+    height: 30px;
+    background-color: #7952b3;
+    border: none;
+    border-radius: 2px;
+    color: white;
+}
+
+.gallery {
+    border: 2px solid #80808061;
+    background-color: white;
+    min-height: 50px;
+    border-radius: 6px;
+    padding: 25px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.card-link {
+    margin-left: 25px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+    .card-link:nth-child(3n+1) {
+        margin-left: 0px;
+    }
+
+.card {
+    min-height: 300px;
+    width: 256px;
+    border: 2px solid #80808061;
+    border-radius: 6px;
+    padding: 20px;
+    cursor: pointer;
+    transition: box-shadow 1s, transform 1s, border 1s;
+}
+
+.card:hover {
+    border: 1px solid #80808028;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    transform: scale(1.02);
+}
+
+.image-container {
+    margin-bottom: 15px;
+}
+
+.card img {
+    width: 212px;
+    height: 212px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.rating-star {
+    display: inline-block;
+    width: 16px;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 0 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+    footer a {
+        text-decoration: none;
+        color: black;
+    }
+
+.text-nav-title {
+    font-weight: bold;
+    font-size: 35px;
+    text-decoration: none;
+    color: white;
+}
+
+.text-nav-link {
+    text-decoration: none;
+    color: white;
+    margin-left: 50px;
+}
